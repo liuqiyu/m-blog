@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name, gender) {
+        this.name = name;
+        this.gender = gender;
+        this.say = function () {
+            alert('hello');
+        }
+    }
+
+    Person.prototype.play = function () {
+        alert('ball');
+    };
+
+    var xuan = new Person('xuan', '女');
+</script>
+</body>
+</html>
