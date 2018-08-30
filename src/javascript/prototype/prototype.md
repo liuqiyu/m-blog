@@ -24,11 +24,12 @@
 
 **  **
 
-### 举个例子
+### Prototype验证方法
 
-```javascript
-
-```
+* `isPrototypeOf()`:判断`prototype`对象和某个示例之间的关系。
+    `console.log(Cat.prototype.isPrototypeOf(cat1)); // true`
+* `hasOwnProperty()`: 来判断一个属性是本地属性，还是继承自`prototype`对象的属性。
+    `cat1.hasOwnProperty('type')`  // 本地属性 true
 
 ### 解答时间
 
