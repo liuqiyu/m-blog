@@ -20,8 +20,8 @@
 
     var xuan = new Person('xuan', '女');
 
-    console.log(Person.prototype.__proto__ ===  Object.prototype);
-    console.log(Person.__proto__ === Function.prototype);
+    function aaa() {}
+    console.log(aaa.__proto__.constructor === Function);
 </script>
 </body>
 </html>
