@@ -4,7 +4,7 @@
 ![Image text](prototype.png)
 <hr/>
 
-> 对象分等级： Object -> Function -> (String, Array, Date, Number, Boolean, Math)内奸对象 -> 其他
+> 对象分等级： Object -> Function -> (String, Array, Date, Number, Boolean, Math)内置对象 -> 其他
 
 <hr/>
 
