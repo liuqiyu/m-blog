@@ -4,6 +4,10 @@
 ![Image text](prototype.png)
 <hr/>
 
+> 对象分等级： Object -> Function -> (String, Array, Date, Number, Boolean, Math)内奸对象 -> 其他
+
+<hr/>
+
 * 所有的引用类型(函数、数组、对象)都拥有`_proto_`属性（隐式原型）
 * 所有的函数都拥有`prototype`属性（显示原型）（仅限函数）
 
