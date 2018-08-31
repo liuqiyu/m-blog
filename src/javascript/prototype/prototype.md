@@ -26,10 +26,12 @@
 
 ### Prototype验证方法
 
-* `isPrototypeOf()`:判断`prototype`对象和某个示例之间的关系。
-    `console.log(Cat.prototype.isPrototypeOf(cat1)); // true`
-* `hasOwnProperty()`: 来判断一个属性是本地属性，还是继承自`prototype`对象的属性。
-    `cat1.hasOwnProperty('type')`  // 本地属性 true
+* 1、`isPrototypeOf()`: 验证某个`prototype`对象和某个实例之间的关系
+`Person.prototype.isPrototypeOf(person1) // true`  
+* 2、`hasOwnProperty()`： 每个实例对象都有一个`hasOwnProperty`方法，用来判断某一个属性到底是本地属性，还是继承自`prototype`对象的属性。
+`person.hasOwnProperty('name') // true`
+* 3、`in()`： 判断某个实例是否含有某个属性，不管是不是本地属性。
+`'type' in person1 // true`
 
 ### 解答时间
 
