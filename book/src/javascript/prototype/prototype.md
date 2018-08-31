@@ -4,28 +4,32 @@
 ![Image text](prototype.png)
 <hr/>
 
+> 对象分等级： Object -> Function -> (String, Array, Date, Number, Boolean, Math)内置对象 -> 其他
+
+<hr/>
+
 * 所有的引用类型(函数、数组、对象)都拥有`_proto_`属性（隐式原型）
 * 所有的函数都拥有`prototype`属性（显示原型）（仅限函数）
 
 ### 一、原型
-问题： 什么是js原型？
+**问题： 什么是js原型？**
 
-** 无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个`prototype`属性，这个属性指向函数的原型对象。
+无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个`prototype`属性，这个属性指向函数的原型对象。
 在默认情况下，所有原型对象都会主动获得一个`constructor`（构造函数的属性），这个属性包含一个指向`prototype`属性所在函数的指针。
-**
 
 ### 二、原型链
-问题：什么是原型链
+**问题：什么是原型链**
 
-** 每个构造函数都有一个原型对象(prototype)，原型对象都包含一个指向构造函数的指针(constructor)，而实例都包含一个指向原型对象的内部指针(proto)。 **
+每个构造函数都有一个原型对象(prototype)，原型对象都包含一个指向构造函数的指针(constructor)，而实例都包含一个指向原型对象的内部指针(proto)。
 
 **  **
 
-### 举个例子
+### Prototype验证方法
 
-```javascript
-
-```
+* `isPrototypeOf()`:判断`prototype`对象和某个示例之间的关系。
+    `console.log(Cat.prototype.isPrototypeOf(cat1)); // true`
+* `hasOwnProperty()`: 来判断一个属性是本地属性，还是继承自`prototype`对象的属性。
+    `cat1.hasOwnProperty('type')`  // 本地属性 true
 
 ### 解答时间
 
@@ -72,6 +76,11 @@ cat1.hasOwnProerty('name');    // true   =>   构造函数继承
 cat1.hasOwnProerty('height');  // true   =>   实例定义
 cat1.hasOwnProerty('type');    // false  =>   原型定义 
 ```
+
+<hr/>
+
+### 考考你.以下 `true` or `false`?
+![Image](prototype1.png)
 
 
 

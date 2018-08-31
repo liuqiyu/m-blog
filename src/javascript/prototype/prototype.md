@@ -77,5 +77,10 @@ cat1.hasOwnProerty('height');  // true   =>   实例定义
 cat1.hasOwnProerty('type');    // false  =>   原型定义 
 ```
 
+<hr/>
+
+### 考考你.以下 `true` or `false`?
+![Image](prototype1.png)
+
 
 

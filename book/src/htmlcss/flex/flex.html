@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>对象 · Webpack 中文指南</title>
+        <title>flex · Webpack 中文指南</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="create-object/" />
     
-    
-    <link rel="prev" href="../prototype/prototype.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -102,9 +100,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../">
+        <li class="chapter " data-level="1.2" data-path="../../javascript/">
             
-                <a href="../">
+                <a href="../../javascript/">
             
                     
                     Javascript
@@ -116,9 +114,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../prototype/prototype.html">
+        <li class="chapter " data-level="1.2.1" data-path="../../javascript/prototype/prototype.html">
             
-                <a href="../prototype/prototype.html">
+                <a href="../../javascript/prototype/prototype.html">
             
                     
                     原型与原型链
@@ -129,9 +127,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="./">
+        <li class="chapter " data-level="1.2.2" data-path="../../javascript/object/">
             
-                <a href="./">
+                <a href="../../javascript/object/">
             
                     
                     对象
@@ -143,9 +141,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="create-object/">
+        <li class="chapter " data-level="1.2.2.1" data-path="../../javascript/object/create-object/">
             
-                <a href="create-object/">
+                <a href="../../javascript/object/create-object/">
             
                     
                     创建对象
@@ -161,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../promise.html">
+        <li class="chapter " data-level="1.2.3" data-path="../../javascript/promise.html">
             
-                <a href="../promise.html">
+                <a href="../../javascript/promise.html">
             
                     
                     promise
@@ -174,9 +172,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../call和apply.html">
+        <li class="chapter " data-level="1.2.4" data-path="../../javascript/call和apply.html">
             
-                <a href="../call和apply.html">
+                <a href="../../javascript/call和apply.html">
             
                     
                     call和apply
@@ -187,9 +185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../构造函数继承.html">
+        <li class="chapter " data-level="1.2.5" data-path="../../javascript/构造函数继承.html">
             
-                <a href="../构造函数继承.html">
+                <a href="../../javascript/构造函数继承.html">
             
                     
                     构造函数继承
@@ -200,9 +198,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../非构造函数继承.html">
+        <li class="chapter " data-level="1.2.6" data-path="../../javascript/非构造函数继承.html">
             
-                <a href="../非构造函数继承.html">
+                <a href="../../javascript/非构造函数继承.html">
             
                     
                     非构造函数继承
@@ -315,9 +313,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../../htmlcss/">
+        <li class="chapter " data-level="1.4" data-path="../">
             
-                <a href="../../htmlcss/">
+                <a href="../">
             
                     
                     html+css
@@ -329,9 +327,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../../htmlcss/flex/flex.html">
+        <li class="chapter active" data-level="1.4.1" data-path="flex.html">
             
-                <a href="../../htmlcss/flex/flex.html">
+                <a href="flex.html">
             
                     
                     flex
@@ -377,7 +375,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >对象</a>
+        <a href="../../.." >flex</a>
     </h1>
 </div>
 
@@ -392,7 +390,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="object">Object</h1>
+                                <h1 id="flex">flex</h1>
+<ul>
+<li><p>flex-direction: <code>row</code> | <code>row-reverse</code> | <code>column</code> | <code>column-reverse</code>
+<img src="flex-direction.png" alt="Image"></p>
+<hr>
+</li>
+<li><p>flex-wrap: <code>nowrap</code>&#xFF08;&#x4E0D;&#x6362;&#x884C;&#xFF09; | <code>wrap</code>&#xFF08;&#x7B2C;&#x4E00;&#x884C;&#x5728;&#x4E0A;&#x9762;&#xFF09; | <code>wrap-reverse</code>&#xFF08;&#x7B2C;&#x4E00;&#x884C;&#x5728;&#x4E0B;&#x9762;&#xFF09;
+<img src="flex-wrap.png" alt="Image"></p>
+<hr>
+</li>
+<li><p>flex-flow: <code>&lt;flex-direction&gt;</code> || <code>&lt;flex-wrap&gt;</code>;</p>
+<hr>
+</li>
+<li><p>justify-content: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code>;
+<img src="justify-centent.png" alt="Image"></p>
+<hr>
+</li>
+<li><p>align-items: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>baseline</code> | <code>stretch</code>;
+<img src="align-items.png" alt="Image"></p>
+<hr>
+</li>
+<li><p>align-centent: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code> | <code>stretch</code>;
+<img src="align-content.png" alt="Image"></p>
+<hr></li>
+</ul>
 
                                 
                                 </section>
@@ -420,14 +442,10 @@
 
             
                 
-                <a href="../prototype/prototype.html" class="navigation navigation-prev " aria-label="Previous page: 原型与原型链">
+                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: html+css">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="create-object/" class="navigation navigation-next " aria-label="Next page: 创建对象">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -436,7 +454,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"对象","level":"1.2.2","depth":2,"next":{"title":"创建对象","level":"1.2.2.1","depth":3,"path":"src/javascript/object/create-object/README.md","ref":"src/javascript/object/create-object/README.md","articles":[]},"previous":{"title":"原型与原型链","level":"1.2.1","depth":2,"path":"src/javascript/prototype/prototype.md","ref":"src/javascript/prototype/prototype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/javascript/object/README.md","mtime":"2018-08-29T09:54:09.874Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-31T09:48:49.412Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"flex","level":"1.4.1","depth":2,"previous":{"title":"html+css","level":"1.4","depth":1,"path":"src/htmlcss/README.md","ref":"src/htmlcss/README.md","articles":[{"title":"flex","level":"1.4.1","depth":2,"path":"src/htmlcss/flex/flex.md","ref":"src/htmlcss/flex/flex.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/htmlcss/flex/flex.md","mtime":"2018-08-31T03:03:18.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-31T09:48:49.412Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,6 +17,7 @@ function createPerson(name, age) {
     o.say = function () {
         alert(this.name);
     }
+    return o;
 }
 
 var person1 = createPerson('xuan', 18);
@@ -82,3 +83,13 @@ console.log(Person.prototype.__proto__.__proto__);                  // null
 console.log(Person.__proto__);                                      // Function.prototype
 ```
 `Object`的原型是`null` - `Object.prototype.__proto__ === null`
+
+
+### 验证方法
+
+* 1、`isPrototypeOf()`: 验证某个`prototype`对象和某个实例之间的关系
+`Person.prototype.isPrototypeOf(person1) // true`  
+* 2、`hasOwnProperty()`： 每个实例对象都有一个`hasOwnProperty`方法，用来判断某一个属性到底是本地属性，还是继承自`prototype`对象的属性。
+`person.hasOwnProperty('name') // true`
+* 3、`in()`： 判断某个实例是否含有某个属性，不管是不是本地属性。
+`'type' in person1 // true`
