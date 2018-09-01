@@ -6,64 +6,20 @@
 </head>
 <body>
 <script>
-    function Person(type) {
-        this.type = type;
-        this.say = function() {
-            console.log('hi');
-        }
-    }
-
-    function Man(name) {
-        this.name = name;
-    }
-
-
-
-    Man.prototype = new Person();
-
-    Man.prototype.constructor = Man;
-
-    var kaway = new Man('dd');
-    kaway.type = '人';
-
-    /*********** 实例 **************/
-    console.log(kaway.__proto__ === Man.prototype);
-    console.log(kaway.__proto__.constructor === Man);
-    console.log(kaway.__proto__.__proto__.constructor === Person);
-    console.log(kaway.__proto__.__proto__.__proto__.constructor === Object);
-    console.log(kaway.__proto__.__proto__ === Person.prototype);
-    console.log(kaway.__proto__.__proto__.__proto__ === Object.prototype);
-    console.log(kaway.__proto__.__proto__.__proto__.__proto__ === null);
-
-    /*********** Man（继承Person） **************/
-    console.log(Man.__proto__ === Function.prototype);
-    console.log(Man.prototype.constructor === Man);
-    console.log(Man.prototype.__proto__.constructor === Person);
-    console.log(Man.prototype.__proto__.__proto__.constructor === Object);
-    console.log(Man.prototype.__proto__ === Person.prototype);
-    console.log(Man.prototype.__proto__.__proto__ === Object.prototype);
-    console.log(Man.prototype.__proto__.__proto__.__proto__ === null);
-
-    /*********** Person **************/
-    console.log(Person.__proto__ === Function.prototype);
-    console.log(Person.prototype.constructor === Person);
-    console.log(Person.prototype.__proto__.constructor === Object);
-    console.log(Person.prototype.__proto__ === Object.prototype);
-    console.log(Person.prototype.__proto__.__proto__ === null);
-
-    /*********** Object **************/
-    console.log(Object.__proto__ === Function.prototype);
-    console.log(Object.prototype.constructor === Object);
-    console.log(Object.prototype === Function.prototype.__proto__);
-    console.log(Object.prototype === Function.__proto__.__proto__);
-    console.log(Object.prototype.__proto__ === null);
-
-    /*********** Function **************/
-    console.log(Function.__proto__ === Function.prototype);
-    console.log(Function.__proto__.__proto__  === Object.prototype);
-    console.log(Function.prototype.__proto__ === Object.prototype);
-    console.log(Function.prototype.__proto__.__proto__ === null);
-    console.log(Function.prototype.__proto__.__proto__ === null);
+   function func(a, b) {
+       console.log(arguments);
+       a +=1;
+       b.c += 1;
+       console.log(a);
+       console.log(b);
+   }
+   var a = 1;
+   var b = {
+       c: 2
+   }
+   func(a, b);
+    console.log(a);
+    console.log(b);
 </script>
 </body>
 </html>
