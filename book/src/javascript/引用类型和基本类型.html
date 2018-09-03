@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>非构造函数继承 · Webpack 中文指南</title>
+        <title>引用类型和基本类型 · Webpack 中文指南</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,7 +60,7 @@
     <link rel="next" href="../vue/" />
     
     
-    <link rel="prev" href="构造函数继承.html" />
+    <link rel="prev" href="非构造函数继承.html" />
     
 
     </head>
@@ -200,12 +200,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.6" data-path="非构造函数继承.html">
+        <li class="chapter " data-level="1.2.6" data-path="非构造函数继承.html">
             
                 <a href="非构造函数继承.html">
             
                     
                     非构造函数继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="引用类型和基本类型.html">
+            
+                <a href="引用类型和基本类型.html">
+            
+                    
+                    引用类型和基本类型
             
                 </a>
             
@@ -377,7 +390,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >非构造函数继承</a>
+        <a href="../.." >引用类型和基本类型</a>
     </h1>
 </div>
 
@@ -392,7 +405,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x975E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7EE7;&#x627F;">&#x975E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7EE7;&#x627F;</h1>
+                                <h1 id="&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x548C;&#x57FA;&#x672C;&#x7C7B;&#x578B;">&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x548C;&#x57FA;&#x672C;&#x7C7B;&#x578B;</h1>
+<ul>
+<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF1A; <code>Undefined</code> <code>String</code> <code>Null</code> <code>Number</code> <code>Boolean</code></li>
+<li>&#x5F15;&#x7528;&#x7C7B;&#x578B;</li>
+</ul>
+<hr>
+
+<h3 id="1&#x3001;&#x68C0;&#x6D4B;&#x7C7B;&#x578B;">1&#x3001;&#x68C0;&#x6D4B;&#x7C7B;&#x578B;</h3>
+<ul>
+<li><p>typeof&#xFF1A; &#x68C0;&#x6D4B;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x68C0;&#x6D4B;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7528;&#x5904;&#x4E0D;&#x5927;&#x3002;</p>
+<ul>
+<li>typeof <code>Number</code>: // number</li>
+<li>typeof <code>String</code>: // string</li>
+<li>typeof <code>Boolean</code>: // boolean</li>
+<li>typeof <code>Undefined</code>: // undefined</li>
+<li><p>typeof <code>Null</code>: // Object</p>
+<p>// &#x5206;&#x5272;&#x7EBF;</p>
+</li>
+<li>typeof <code>Object</code>: // Object</li>
+<li>typeof <code>Array</code>: // Object</li>
+<li>typeof <code>Function</code>: // Function</li>
+</ul>
+</li>
+<li><p>instanceof&#xFF1A;&#x68C0;&#x6D4B;&#x5F15;&#x7528;&#x7C7B;&#x578B;</p>
+<blockquote>
+<p>&#x6240;&#x6709;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x90FD;&#x662F;<code>Object</code>&#x7684;&#x5B9E;&#x4F8B;</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> a = {};  <span class="hljs-comment">// Object</span>
+<span class="hljs-keyword">var</span> b = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{};  <span class="hljs-comment">// Function</span>
+<span class="hljs-keyword">var</span> c = [];  <span class="hljs-comment">// Array</span>
+
+a <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;   <span class="hljs-comment">// true</span>
+b <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>;   <span class="hljs-comment">// true</span>
+c <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>;   <span class="hljs-comment">// true</span>
+
+<span class="hljs-built_in">Number</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;
+<span class="hljs-built_in">String</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;
+<span class="hljs-built_in">Boolean</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;
+<span class="hljs-built_in">Function</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;
+<span class="hljs-built_in">Array</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>;
+so
+b <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>; <span class="hljs-comment">// true</span>
+c <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>; <span class="hljs-comment">// true</span>
+</code></pre>
 
                                 
                                 </section>
@@ -420,7 +478,7 @@
 
             
                 
-                <a href="构造函数继承.html" class="navigation navigation-prev " aria-label="Previous page: 构造函数继承">
+                <a href="非构造函数继承.html" class="navigation navigation-prev " aria-label="Previous page: 非构造函数继承">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -436,7 +494,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"非构造函数继承","level":"1.2.6","depth":2,"next":{"title":"Vue","level":"1.3","depth":1,"path":"src/vue/README.md","ref":"src/vue/README.md","articles":[{"title":"模版和数据渲染成最终的DOM的过程","level":"1.3.1","depth":2,"path":"src/vue/模板和数据渲染成DOM.md","ref":"src/vue/模板和数据渲染成DOM.md","articles":[]},{"title":"双向绑定","level":"1.3.2","depth":2,"path":"src/vue/双向绑定.md","ref":"src/vue/双向绑定.md","articles":[]},{"title":"虚拟dom","level":"1.3.3","depth":2,"path":"src/vue/virtual-dom.md","ref":"src/vue/virtual-dom.md","articles":[]},{"title":"vuex","level":"1.3.4","depth":2,"path":"src/vue/vuex.md","ref":"src/vue/vuex.md","articles":[]},{"title":"nextTick","level":"1.3.5","depth":2,"path":"src/vue/nextTick.md","ref":"src/vue/nextTick.md","articles":[]},{"title":"vue与其他框架差异","level":"1.3.6","depth":2,"path":"src/vue/contrast.md","ref":"src/vue/contrast.md","articles":[]}]},"previous":{"title":"构造函数继承","level":"1.2.5","depth":2,"path":"src/javascript/构造函数继承.md","ref":"src/javascript/构造函数继承.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/javascript/非构造函数继承.md","mtime":"2018-08-31T08:16:45.090Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-31T09:48:49.412Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"引用类型和基本类型","level":"1.2.7","depth":2,"next":{"title":"Vue","level":"1.3","depth":1,"path":"src/vue/README.md","ref":"src/vue/README.md","articles":[{"title":"模版和数据渲染成最终的DOM的过程","level":"1.3.1","depth":2,"path":"src/vue/模板和数据渲染成DOM.md","ref":"src/vue/模板和数据渲染成DOM.md","articles":[]},{"title":"双向绑定","level":"1.3.2","depth":2,"path":"src/vue/双向绑定.md","ref":"src/vue/双向绑定.md","articles":[]},{"title":"虚拟dom","level":"1.3.3","depth":2,"path":"src/vue/virtual-dom.md","ref":"src/vue/virtual-dom.md","articles":[]},{"title":"vuex","level":"1.3.4","depth":2,"path":"src/vue/vuex.md","ref":"src/vue/vuex.md","articles":[]},{"title":"nextTick","level":"1.3.5","depth":2,"path":"src/vue/nextTick.md","ref":"src/vue/nextTick.md","articles":[]},{"title":"vue与其他框架差异","level":"1.3.6","depth":2,"path":"src/vue/contrast.md","ref":"src/vue/contrast.md","articles":[]}]},"previous":{"title":"非构造函数继承","level":"1.2.6","depth":2,"path":"src/javascript/非构造函数继承.md","ref":"src/javascript/非构造函数继承.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/javascript/引用类型和基本类型.md","mtime":"2018-09-01T09:16:30.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T02:26:10.772Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

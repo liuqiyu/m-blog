@@ -6,20 +6,23 @@
 </head>
 <body>
 <script>
-   function func(a, b) {
-       console.log(arguments);
-       a +=1;
-       b.c += 1;
-       console.log(a);
-       console.log(b);
-   }
-   var a = 1;
-   var b = {
-       c: 2
-   }
-   func(a, b);
-    console.log(a);
-    console.log(b);
+function Person() {};
+Person.prototype = {
+    type: '人',
+    say: function() {
+        console.log(this);
+        console.log(this.type);
+    }
+}
+
+function Women() {}
+Women.prototype = Person.prototype;
+Women.prototype.constructor = Women;
+
+const xuan = new Women();
+
+console.log(xuan.type);
+console.log(xuan.say());
 </script>
 </body>
 </html>

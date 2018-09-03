@@ -213,6 +213,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.7" data-path="../javascript/引用类型和基本类型.html">
+            
+                <a href="../javascript/引用类型和基本类型.html">
+            
+                    
+                    引用类型和基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -392,28 +405,175 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="vue&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">vue&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</h1>
-<p>Vue&#x7684;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
-<p>&#x7B54;&#xFF1A;vue.js &#x662F;&#x91C7;&#x7528;&#x6570;&#x636E;&#x52AB;&#x6301;&#x7ED3;&#x5408;&#x53D1;&#x5E03;&#x8005;-&#x8BA2;&#x9605;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;Object.defineProperty()&#x6765;&#x52AB;&#x6301;&#x5404;&#x4E2A;&#x5C5E;&#x6027;&#x7684;setter&#xFF0C;getter&#xFF0C;&#x5728;&#x6570;&#x636E;&#x53D8;&#x52A8;&#x65F6;&#x53D1;&#x5E03;&#x6D88;&#x606F;&#x7ED9;&#x8BA2;&#x9605;&#x8005;&#xFF0C;&#x89E6;&#x53D1;&#x76F8;&#x5E94;&#x7684;&#x76D1;&#x542C;&#x56DE;&#x8C03;&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#xFF1A;</p>
-<ul>
-<li><p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x9700;&#x8981;observe&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x904D;&#x5386;&#xFF0C;&#x5305;&#x62EC;&#x5B50;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x52A0;&#x4E0A; setter&#x548C;getter
-&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x7ED9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E2A;&#x503C;&#x8D4B;&#x503C;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;setter&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x80FD;&#x76D1;&#x542C;&#x5230;&#x4E86;&#x6570;&#x636E;&#x53D8;&#x5316;</p>
-</li>
-<li><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;compile&#x89E3;&#x6790;&#x6A21;&#x677F;&#x6307;&#x4EE4;&#xFF0C;&#x5C06;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x66FF;&#x6362;&#x6210;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x521D;&#x59CB;&#x5316;&#x6E32;&#x67D3;&#x9875;&#x9762;&#x89C6;&#x56FE;&#xFF0C;&#x5E76;&#x5C06;&#x6BCF;&#x4E2A;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x7ED1;&#x5B9A;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#xFF0C;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x6570;&#x636E;&#x7684;&#x8BA2;&#x9605;&#x8005;&#xFF0C;&#x4E00;&#x65E6;&#x6570;&#x636E;&#x6709;&#x53D8;&#x52A8;&#xFF0C;&#x6536;&#x5230;&#x901A;&#x77E5;&#xFF0C;&#x66F4;&#x65B0;&#x89C6;&#x56FE;</p>
-</li>
-<li><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;Watcher&#x8BA2;&#x9605;&#x8005;&#x662F;Observer&#x548C;Compile&#x4E4B;&#x95F4;&#x901A;&#x4FE1;&#x7684;&#x6865;&#x6881;&#xFF0C;&#x4E3B;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x662F;:</p>
-<ul>
-<li>1&#x3001;&#x5728;&#x81EA;&#x8EAB;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x5F80;&#x5C5E;&#x6027;&#x8BA2;&#x9605;&#x5668;(dep)&#x91CC;&#x9762;&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;</li>
-<li>2&#x3001;&#x81EA;&#x8EAB;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;update()&#x65B9;&#x6CD5;</li>
-<li>3&#x3001;&#x5F85;&#x5C5E;&#x6027;&#x53D8;&#x52A8;dep.notice()&#x901A;&#x77E5;&#x65F6;&#xFF0C;&#x80FD;&#x8C03;&#x7528;&#x81EA;&#x8EAB;&#x7684;update()&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x89E6;&#x53D1;Compile&#x4E2D;&#x7ED1;&#x5B9A;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x5219;&#x529F;&#x6210;&#x8EAB;&#x9000;&#x3002;</li>
-</ul>
-</li>
-<li><p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;MVVM&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x6574;&#x5408;Observer&#x3001;Compile&#x548C;Watcher&#x4E09;&#x8005;&#xFF0C;&#x901A;&#x8FC7;Observer&#x6765;&#x76D1;&#x542C;&#x81EA;&#x5DF1;&#x7684;model&#x6570;&#x636E;&#x53D8;&#x5316;&#xFF0C;&#x901A;&#x8FC7;Compile&#x6765;&#x89E3;&#x6790;&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x6307;&#x4EE4;&#xFF0C;&#x6700;&#x7EC8;&#x5229;&#x7528;Watcher&#x642D;&#x8D77;Observer&#x548C;Compile&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x6865;&#x6881;&#xFF0C;&#x8FBE;&#x5230;&#x6570;&#x636E;&#x53D8;&#x5316; -&gt; &#x89C6;&#x56FE;&#x66F4;&#x65B0;&#xFF1B;&#x89C6;&#x56FE;&#x4EA4;&#x4E92;&#x53D8;&#x5316;(input) -&gt; &#x6570;&#x636E;model&#x53D8;&#x66F4;&#x7684;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6548;&#x679C;&#x3002;</p>
-</li>
-</ul>
-<p><a href="https://blog.csdn.net/m6i37jk/article/details/78140159" target="_blank">https://blog.csdn.net/m6i37jk/article/details/78140159</a> </p>
+                                <h2 id="objectdefineproperty&#x6570;&#x636E;&#x52AB;&#x6301;">Object.defineProperty&#x6570;&#x636E;&#x52AB;&#x6301;</h2>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;txt&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sp&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> txt = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;txt&apos;</span>);
+    <span class="hljs-keyword">var</span> sp = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;sp&apos;</span>);
 
+    <span class="hljs-keyword">var</span> obj = {}
+
+    <span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">&apos;txt&apos;</span>, {
+      Configurable: <span class="hljs-literal">true</span>,
+      Enumerable: <span class="hljs-literal">true</span>,
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+        txt.value = value;
+        sp.innerText = value;
+      }
+    });
+
+    txt.addEventListener(<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+      obj.txt = e.target.value;
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2 id="vue-&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">Vue &#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;
+    &lt;h3 v-bind=&quot;name&quot;&gt;&lt;/h3&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;testData1&quot;&gt;
+    &lt;h3&gt;&lt;/h3&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;testData2&quot;&gt;
+    &lt;h3&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    function myVue(options = {}) {  // &#x9632;&#x6B62;&#x6CA1;&#x4F20;&#xFF0C;&#x8BBE;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;
+        this.$options = options; // &#x914D;&#x7F6E;&#x6302;&#x8F7D;
+        this.$el = document.querySelector(options.el); // &#x83B7;&#x53D6;dom
+        this._data = options.data; // &#x6570;&#x636E;&#x6302;&#x8F7D;
+        this._watcherTpl = {}; // watcher&#x6C60;
+        this._observer(this._data); // &#x4F20;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x91CD;&#x5199;&#x6570;&#x636E;&#x7684;get set
+        this._compile(this.$el); // &#x4F20;&#x5165;dom&#xFF0C;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x6A21;&#x677F; &#x53D1;&#x5E03;&#x8BA2;&#x9605;
+    }
+
+    // new Watcher() &#x4E3A;this._compile()&#x53D1;&#x5E03;&#x8BA2;&#x9605;+ &#x5728;this._observer()&#x4E2D;set(&#x8D4B;&#x503C;)&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;&#x89C6;&#x56FE;
+    function Watcher(el, vm, val, attr) {
+        this.el = el; // &#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x7684;DOM&#x5143;&#x7D20;
+        this.vm = vm; // myVue&#x5B9E;&#x4F8B;
+        this.val = val; // &#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x7684;&#x503C;
+        this.attr = attr; // dom&#x83B7;&#x53D6;&#x503C;&#xFF0C;&#x5982;value&#x83B7;&#x53D6;input&#x7684;&#x503C; / innerHTML&#x83B7;&#x53D6;dom&#x7684;&#x503C;
+        this.update(); // &#x66F4;&#x65B0;&#x89C6;&#x56FE;
+    }
+
+    Watcher.prototype.update = function () {
+        this.el[this.attr] = this.vm._data[this.val]; // &#x83B7;&#x53D6;data&#x7684;&#x6700;&#x65B0;&#x503C; &#x8D4B;&#x503C;&#x7ED9;dom &#x66F4;&#x65B0;&#x89C6;&#x56FE;
+    };
+
+    myVue.prototype._observer = function (obj) {
+        var _this = this;
+        Object.keys(obj).forEach(key =&gt; { // &#x904D;&#x5386;&#x6570;&#x636E;
+            _this._watcherTpl[key] = { // &#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x8BA2;&#x9605;&#x6C60;()
+                _directives: []
+            };
+            var value = obj[key]; // &#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x503C;
+            var watcherTpl = _this._watcherTpl[key]; // &#x6570;&#x636E;&#x7684;&#x8BA2;&#x9605;&#x6C60;
+            Object.defineProperty(_this._data, key, { // &#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x90E8;&#x5206; &#x91CD;&#x5199;&#x6570;&#x636E;&#x7684;set get
+                configurable: true,  // &#x53EF;&#x4EE5;&#x5220;&#x9664;
+                enumerable: true, // &#x53EF;&#x4EE5;&#x904D;&#x5386;
+                get() {
+                    console.log(`${key}&#x83B7;&#x53D6;&#x503C;&#xFF1A;${value}`);
+                    return value; // &#x83B7;&#x53D6;&#x503C;&#x7684;&#x65F6;&#x5019; &#x76F4;&#x63A5;&#x8FD4;&#x56DE;
+                },
+                set(newVal) { // &#x6539;&#x53D8;&#x503C;&#x7684;&#x65F6;&#x5019; &#x89E6;&#x53D1;set
+                    console.log(`${key}&#x66F4;&#x65B0;&#xFF1A;${newVal}`);
+                    if (value !== newVal) {
+                        value = newVal;
+                        watcherTpl._directives.forEach((item) =&gt; { // &#x904D;&#x5386;&#x8BA2;&#x9605;&#x6C60;
+                            item.update();
+                            // &#x904D;&#x5386;&#x6240;&#x6709;&#x8BA2;&#x9605;&#x7684;&#x5730;&#x65B9;(v-model+v-bind+`&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;`) &#x89E6;&#x53D1;this._compile()&#x4E2D;&#x53D1;&#x5E03;&#x7684;&#x8BA2;&#x9605;Watcher &#x66F4;&#x65B0;&#x89C6;&#x56FE;
+                        });
+                    }
+                }
+            })
+        });
+    };
+
+    myVue.prototype._compile = function (el) {
+        var _this = this, nodes = el.children; // &#x83B7;&#x53D6;app&#x7684;dom
+        for (var i = 0, len = nodes.length; i &lt; len; i++) { // &#x904D;&#x5386;dom&#x8282;&#x70B9;
+            var node = nodes[i];
+            if (node.children.length) {
+                _this._compile(node);  // &#x9012;&#x5F52;&#x6DF1;&#x5EA6;&#x904D;&#x5386; dom&#x6811;
+            }
+            // &#x5982;&#x679C;&#x6709;v-model&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x5143;&#x7D20;&#x662F;INPUT&#x6216;&#x8005;TEXTAREA&#xFF0C;&#x6211;&#x4EEC;&#x76D1;&#x542C;&#x5B83;&#x7684;input&#x4E8B;&#x4EF6;
+            if (node.hasAttribute(&apos;v-model&apos;) &amp;&amp; (node.tagName = &apos;INPUT&apos; || node.tagName == &apos;TEXTAREA&apos;)) {
+                node.addEventListener(&apos;input&apos;, (function (key) {
+                    var attVal = node.getAttribute(&apos;v-model&apos;); // &#x83B7;&#x53D6;v-model&#x7ED1;&#x5B9A;&#x7684;&#x503C;
+                    _this._watcherTpl[attVal]._directives.push(new Watcher( // &#x5C06;dom&#x66FF;&#x6362;&#x6210;&#x5C5E;&#x6027;&#x7684;&#x6570;&#x636E;&#x5E76;&#x53D1;&#x5E03;&#x8BA2;&#x9605; &#x5728;set&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;&#x6570;&#x636E;
+                        node,
+                        _this,
+                        attVal,
+                        &apos;value&apos;
+                    ));
+                    return function () {
+                        _this._data[attVal] = nodes[key].value;  // input&#x503C;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019; &#x5C06;&#x65B0;&#x503C;&#x8D4B;&#x7ED9;&#x6570;&#x636E; &#x89E6;&#x53D1;set=&gt;set&#x89E6;&#x53D1;watch &#x66F4;&#x65B0;&#x89C6;&#x56FE;
+                    }
+                })(i));
+            }
+            if (node.hasAttribute(&apos;v-bind&apos;)) { // v-bind&#x6307;&#x4EE4;
+                var attrVal = node.getAttribute(&apos;v-bind&apos;); // &#x7ED1;&#x5B9A;&#x7684;data
+                _this._watcherTpl[attrVal]._directives.push(new Watcher( // &#x5C06;dom&#x66FF;&#x6362;&#x6210;&#x5C5E;&#x6027;&#x7684;&#x6570;&#x636E;&#x5E76;&#x53D1;&#x5E03;&#x8BA2;&#x9605; &#x5728;set&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;&#x6570;&#x636E;
+                    node,
+                    _this,
+                    attrVal,
+                    &apos;innerHTML&apos;
+                ))
+            }
+            var reg = /\{\{\s*([^}]+\S)\s*\}\}/g, txt = node.textContent;   // &#x6B63;&#x5219;&#x5339;&#x914D;`&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;`
+            if (reg.test(txt)) {
+                node.textContent = txt.replace(reg, (matched, placeholder) =&gt; {
+                    // matched&#x5339;&#x914D;&#x7684;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5305;&#x62EC;`&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;`, placeholder &#x662F;`&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;`&#x4E2D;&#x95F4;&#x7684;&#x5C5E;&#x6027;&#x540D;
+                    var getName = _this._watcherTpl; // &#x6240;&#x6709;&#x7ED1;&#x5B9A;watch&#x7684;&#x6570;&#x636E;
+                    getName = getName[placeholder];  // &#x83B7;&#x53D6;&#x5BF9;&#x5E94;watch &#x6570;&#x636E;&#x7684;&#x503C;
+                    if (!getName._directives) { // &#x6CA1;&#x6709;&#x4E8B;&#x4EF6;&#x6C60; &#x521B;&#x5EFA;&#x4E8B;&#x4EF6;&#x6C60;
+                        getName._directives = [];
+                    }
+                    getName._directives.push(new Watcher( // &#x5C06;dom&#x66FF;&#x6362;&#x6210;&#x5C5E;&#x6027;&#x7684;&#x6570;&#x636E;&#x5E76;&#x53D1;&#x5E03;&#x8BA2;&#x9605; &#x5728;set&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;&#x6570;&#x636E;
+                        node,
+                        _this,
+                        placeholder,
+                        &apos;innerHTML&apos;
+                    ));
+                    return placeholder.split(&apos;.&apos;).reduce((val, key) =&gt; {
+                        return _this._data[key]; // &#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x503C; &#x89E6;&#x53D1;get &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;
+                    }, _this.$el);
+                });
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;script&gt;
+    window.onload = function () {
+        var app = new myVue({
+            el: &apos;#app&apos;, // dom
+            data: { // &#x6570;&#x636E;
+                testData1: &apos;&#x4EFF;Vue&apos;,
+                testData2: &apos;&#x6781;&#x7B80;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&apos;,
+                name: &apos;OBKoro1&apos;
+            }
+        })
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
                                 
                                 </section>
                             
@@ -456,7 +616,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"双向绑定","level":"1.3.2","depth":2,"next":{"title":"虚拟dom","level":"1.3.3","depth":2,"path":"src/vue/virtual-dom.md","ref":"src/vue/virtual-dom.md","articles":[]},"previous":{"title":"模版和数据渲染成最终的DOM的过程","level":"1.3.1","depth":2,"path":"src/vue/模板和数据渲染成DOM.md","ref":"src/vue/模板和数据渲染成DOM.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/vue/双向绑定.md","mtime":"2018-08-30T01:03:09.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-31T09:51:13.731Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"双向绑定","level":"1.3.2","depth":2,"next":{"title":"虚拟dom","level":"1.3.3","depth":2,"path":"src/vue/virtual-dom.md","ref":"src/vue/virtual-dom.md","articles":[]},"previous":{"title":"模版和数据渲染成最终的DOM的过程","level":"1.3.1","depth":2,"path":"src/vue/模板和数据渲染成DOM.md","ref":"src/vue/模板和数据渲染成DOM.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/vue/双向绑定.md","mtime":"2018-09-01T07:39:02.888Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T02:26:10.772Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
