@@ -1,0 +1,533 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>虚拟dom · Webpack 中文指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vuex.html" />
+    
+    
+    <link rel="prev" href="双向绑定.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../javascript/">
+            
+                <a href="../javascript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../javascript/prototype/prototype.html">
+            
+                <a href="../javascript/prototype/prototype.html">
+            
+                    
+                    原型与原型链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../javascript/object/">
+            
+                <a href="../javascript/object/">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../javascript/object/create-object/">
+            
+                <a href="../javascript/object/create-object/">
+            
+                    
+                    创建对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../javascript/promise.html">
+            
+                <a href="../javascript/promise.html">
+            
+                    
+                    promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../javascript/call和apply.html">
+            
+                <a href="../javascript/call和apply.html">
+            
+                    
+                    call和apply
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../javascript/构造函数继承.html">
+            
+                <a href="../javascript/构造函数继承.html">
+            
+                    
+                    构造函数继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../javascript/非构造函数继承.html">
+            
+                <a href="../javascript/非构造函数继承.html">
+            
+                    
+                    非构造函数继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../javascript/引用类型和基本类型.html">
+            
+                <a href="../javascript/引用类型和基本类型.html">
+            
+                    
+                    引用类型和基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../javascript/Event-loop.html">
+            
+                <a href="../javascript/Event-loop.html">
+            
+                    
+                    Event Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../javascript/异步编程的方法.html">
+            
+                <a href="../javascript/异步编程的方法.html">
+            
+                    
+                    异步编程的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="模板和数据渲染成DOM.html">
+            
+                <a href="模板和数据渲染成DOM.html">
+            
+                    
+                    模版和数据渲染成最终的DOM的过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="双向绑定.html">
+            
+                <a href="双向绑定.html">
+            
+                    
+                    双向绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="virtual-dom.html">
+            
+                <a href="virtual-dom.html">
+            
+                    
+                    虚拟dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="vuex.html">
+            
+                <a href="vuex.html">
+            
+                    
+                    vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="nextTick.html">
+            
+                <a href="nextTick.html">
+            
+                    
+                    nextTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="contrast.html">
+            
+                <a href="contrast.html">
+            
+                    
+                    vue与其他框架差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../htmlcss/">
+            
+                <a href="../htmlcss/">
+            
+                    
+                    html+css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../htmlcss/flex/flex.html">
+            
+                <a href="../htmlcss/flex/flex.html">
+            
+                    
+                    flex
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >虚拟dom</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue&#x539F;&#x7406;&#x89E3;&#x6790;---virtual-dom&#xFF08;&#x865A;&#x62DF;dom&#xFF09;">Vue&#x539F;&#x7406;&#x89E3;&#x6790; - Virtual Dom&#xFF08;&#x865A;&#x62DF;DOM&#xFF09;</h1>
+<p><code>DOM</code>&#x662F;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x5F0F;&#xFF08;<code>Document Object Model</code>&#xFF09;&#x7684;&#x7B80;&#x5199;&#x3002;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;js&#x6765;&#x64CD;&#x4F5C;<code>DOM</code>,&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x6027;&#x80FD;&#x592A;&#x5DEE;&#xFF0C;&#x4E8E;&#x662F;<code>Virtual Dom</code>&#x5E94;&#x8FD0;&#x800C;&#x751F;&#x3002;<code>Vurtual Dom</code>&#x5C31;&#x662F;&#x6A21;&#x62DF;<code>DOM</code>&#x5BF9;&#x8C61;&#x4E66;&#x6765;&#x4F18;&#x5316;<code>DOM</code>&#x64CD;&#x4F5C;&#x7684;&#x4E00;&#x79CD;&#x6280;&#x672F;&#x6216;&#x8005;&#x601D;&#x8DEF;&#x3002;</p>
+<h3 id="&#x4E00;&#x3001;vnode&#x5BF9;&#x8C61;">&#x4E00;&#x3001;VNode&#x5BF9;&#x8C61;</h3>
+<ul>
+<li><code>EmptyVNode</code>: &#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x7684;&#x6CE8;&#x91CA;&#x8282;&#x70B9;</li>
+<li><code>TextVNode</code>: &#x6587;&#x672C;&#x8282;&#x70B9;</li>
+<li><code>ElementVNode</code>: &#x666E;&#x901A;&#x5143;&#x7D20;&#x8282;&#x70B9;</li>
+<li><code>ComponentVNode</code>: &#x7EC4;&#x4EF6;&#x8282;&#x70B9;</li>
+<li><code>CloneVNode</code>: &#x514B;&#x9686;&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EE5;&#x4E0A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;<code>isCloned</code>&#x5C5E;&#x6027;&#x4E3A;<code>true</code></li>
+</ul>
+<h3 id="&#x4E8C;&#x3001;diff">&#x4E8C;&#x3001;diff</h3>
+<p>Vue&#x7684;diff&#x7B97;&#x6CD5;&#x4EC5;&#x5728;&#x540C;&#x7EA7;&#x7684;vnode&#x95F4;&#x505A;diff&#xFF0C;&#x9012;&#x5F52;&#x5730;&#x8FDB;&#x884C;&#x540C;&#x7EA7;vnode&#x7684;diff&#xFF0C;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x6574;&#x4E2A;DOM&#x6811;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
+<p><img src="images/virtualdom.png" alt="Image text"></p>
+<h4 id="1&#x3001;&#x7B80;&#x5355;&#x7684;diff&#x5B9E;&#x73B0;">1&#x3001;&#x7B80;&#x5355;&#x7684;diff&#x5B9E;&#x73B0;</h4>
+<p>&#x9010;&#x4E2A;&#x904D;&#x5386;<code>newVdom</code>&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x627E;&#x5230;&#x5B83;&#x5728;<code>oldVdom</code>&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#x4E86;&#x5C31;&#x79FB;&#x52A8;&#x5BF9;&#x5E94;&#x7684;<code>DOM</code>&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x627E;&#x5230;&#x8BF4;&#x660E;&#x662F;&#x65B0;&#x589E;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x3002;&#x904D;&#x5386;&#x73A9;&#x6210;&#x4E4B;&#x540E;&#x5982;&#x679C;<code>oldVdom</code>&#x4E2D;&#x6D77;&#x6CB9;&#x6CA1;&#x6709;&#x5DEE;&#x4E0D;&#x79BB;&#x7684;&#x53CA;&#x8BF6;&#x5355;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x8FD9;&#x4E9B;&#x8282;&#x70B9;&#x662F;<code>newVdom</code>&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<h4 id="2&#x3001;vue&#x7684;diff&#x5B9E;&#x73B0;">2&#x3001;Vue&#x7684;diff&#x5B9E;&#x73B0;</h4>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="双向绑定.html" class="navigation navigation-prev " aria-label="Previous page: 双向绑定">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vuex.html" class="navigation navigation-next " aria-label="Next page: vuex">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"虚拟dom","level":"1.3.3","depth":2,"next":{"title":"vuex","level":"1.3.4","depth":2,"path":"src/vue/vuex.md","ref":"src/vue/vuex.md","articles":[]},"previous":{"title":"双向绑定","level":"1.3.2","depth":2,"path":"src/vue/双向绑定.md","ref":"src/vue/双向绑定.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://zhaoda.net/"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Webpack 中文指南","language":"zh","gitbook":"*","description":"Webpack 是当下最热门的前端资源模块化管理和打包工具，本书大部分内容翻译自 Webpack 官网。"},"file":{"path":"src/vue/virtual-dom.md","mtime":"2018-08-30T03:23:00.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T11:03:09.532Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

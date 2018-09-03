@@ -10,6 +10,8 @@
     * [构造函数继承](src/javascript/构造函数继承.md)
     * [非构造函数继承](src/javascript/非构造函数继承.md)
     * [引用类型和基本类型](src/javascript/引用类型和基本类型.md)
+    * [Event Loop](src/javascript/Event-loop.md)
+    * [异步编程的方法](src/javascript/异步编程的方法.md)
 * [Vue](src/vue/README.md)
     * [模版和数据渲染成最终的DOM的过程](src/vue/模板和数据渲染成DOM.md)
     * [双向绑定](src/vue/双向绑定.md)
