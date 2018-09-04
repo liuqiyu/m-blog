@@ -6,38 +6,67 @@
 </head>
 <body>
 <script>
-    let data = [
-        {id: 1, text: 't11', parentId: 0},
-        {id: 2, text: 't11', parentId: 0},
-        {id: 3, text: 't11', parentId: 1},
-        {id: 4, text: 't11', parentId: 1},
-        {id: 5, text: 't11', parentId: 3},
-        {id: 6, text: 't11', parentId: 2},
-        {id: 7, text: 't11', parentId: 5},
-    ];
-    data.forEach(ele => {
-        let parentId = ele.parentId;
-        console.log(parentId);
-        if (parentId === 0) {
-            //是根元素的hua ,不做任何操作,如果是正常的for-i循环,可以直接continue.
-        } else {
-            //如果ele是子元素的话 ,把ele扔到他的父亲的child数组中.
-            data.forEach(d => {
-                console.log(d);
-                if (d.id === parentId) {
-                    let childArray = d.child;
-                    if (!childArray) {
-                        childArray = []
-                    }
-                    childArray.push(ele);
-                    d.child = childArray;
+let data = [
+    {id: 1, text: 't11', parentId: 0},
+    {id: 2, text: 't11', parentId: 0},
+    {id: 3, text: 't11', parentId: 1},
+    {id: 4, text: 't11', parentId: 1},
+    {id: 5, text: 't11', parentId: 3},
+    {id: 6, text: 't11', parentId: 2},
+    {id: 7, text: 't11', parentId: 5},
+];
+
+data.forEach((val) => {
+    if (val.parentId !== 0) {
+        console.log(val);
+        data.forEach((row) => {
+            if (row.id === val.parentId) {
+                console.log(row);
+                console.log('----------');
+                let childArr = row.child;
+                if (!childArr) {
+                    childArr = [];
                 }
-            })
-        }
-    });
-    //去除重复元素
-    data = data.filter(ele => ele.parentId === 0);
-    console.log('最终等到的tree结构数据: ', data);
+                console.log(childArr);
+                childArr.push(val);
+                row.child = childArr;
+            }
+        })
+    }
+});
+
+const aa = data.filter((val) => {
+    if (val.parentId === 0) {
+        return val;
+    }
+});
+
+console.log(aa);
+
+// data.forEach(ele => {
+//     let parentId = ele.parentId;
+//     console.log(parentId);
+//     if (parentId === 0) {
+//         //是根元素的hua ,不做任何操作,如果是正常的for-i循环,可以直接continue.
+//     } else {
+//         //如果ele是子元素的话 ,把ele扔到他的父亲的child数组中.
+//         data.forEach(d => {
+//             // console.log(d);
+//             if (d.id === parentId) {
+//                 let childArray = d.child;
+//                 if (!childArray) {
+//                     childArray = []
+//                 }
+//                 childArray.push(ele);
+//                 d.child = childArray;
+//                 console.log(d);
+//             }
+//         })
+//     }
+// });
+// //去除重复元素
+// // data = data.filter(ele => ele.parentId === 0);
+// console.log('最终等到的tree结构数据: ', data);
 </script>
 </body>
 </html>
