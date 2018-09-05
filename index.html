@@ -6,67 +6,54 @@
 </head>
 <body>
 <script>
-let data = [
-    {id: 1, text: 't11', parentId: 0},
-    {id: 2, text: 't11', parentId: 0},
-    {id: 3, text: 't11', parentId: 1},
-    {id: 4, text: 't11', parentId: 1},
-    {id: 5, text: 't11', parentId: 3},
-    {id: 6, text: 't11', parentId: 2},
-    {id: 7, text: 't11', parentId: 5},
-];
+    // function Person(name) {
+    //     this.name = name;
+    // }
+    //
+    // function Women(name, age) {
+    //     Person.apply(this, arguments);
+    //     this.age = age;
+    // }
+    //
+    // var xuan = new Women('xuan', 123);
 
-data.forEach((val) => {
-    if (val.parentId !== 0) {
-        console.log(val);
-        data.forEach((row) => {
-            if (row.id === val.parentId) {
-                console.log(row);
-                console.log('----------');
-                let childArr = row.child;
-                if (!childArr) {
-                    childArr = [];
-                }
-                console.log(childArr);
-                childArr.push(val);
-                row.child = childArr;
-            }
-        })
-    }
-});
+    // function Person1() {}
+    // Person1.prototype.name = 123;
+    //
+    // function Women1() {}
+    //
+    // Women1.prototype = Person1.prototype;
+    // Women1.prototype.constructor = Women1;
+    //
+    // var xuan1 = new Women1();
+    // console.log(xuan1.name);
+    // console.log(xuan1);
 
-const aa = data.filter((val) => {
-    if (val.parentId === 0) {
-        return val;
-    }
-});
+    // function Person2(){}
+    // Person2.prototype.name =123;
+    //
+    // function Women2 () {}
+    // Women2.prototype = new Person2();
+    // Women2.prototype.constructor = Women2;
+    //
+    // var xuan2 = new Women2();
+    // console.log(xuan2.name);
+    // console.log(xuan2);
 
-console.log(aa);
+    function Person3(){}
+    Person3.prototype.name =123;
 
-// data.forEach(ele => {
-//     let parentId = ele.parentId;
-//     console.log(parentId);
-//     if (parentId === 0) {
-//         //是根元素的hua ,不做任何操作,如果是正常的for-i循环,可以直接continue.
-//     } else {
-//         //如果ele是子元素的话 ,把ele扔到他的父亲的child数组中.
-//         data.forEach(d => {
-//             // console.log(d);
-//             if (d.id === parentId) {
-//                 let childArray = d.child;
-//                 if (!childArray) {
-//                     childArray = []
-//                 }
-//                 childArray.push(ele);
-//                 d.child = childArray;
-//                 console.log(d);
-//             }
-//         })
-//     }
-// });
-// //去除重复元素
-// // data = data.filter(ele => ele.parentId === 0);
-// console.log('最终等到的tree结构数据: ', data);
+    function Women3 () {}
+
+    var f = new Person3();
+
+    Women3.prototype = f.__proto__;
+    Women3.prototype.constructor = Women3;
+
+    var xuan3 = new Women3();
+    console.log(xuan3.name);
+    console.log(xuan3);
+
 </script>
 </body>
 </html>
