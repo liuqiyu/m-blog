@@ -3,57 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #wrapper p::selection {
+            color: red;
+        }
+    </style>
 </head>
 <body>
+<div id="wrapper">
+    <p>大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd</p>
+    <p>大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd</p>
+    <p>大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd
+        大声说所所所所所所大所多所大所大打算打算dsd</p>
+</div>
 <script>
-    // function Person(name) {
-    //     this.name = name;
-    // }
-    //
-    // function Women(name, age) {
-    //     Person.apply(this, arguments);
-    //     this.age = age;
-    // }
-    //
-    // var xuan = new Women('xuan', 123);
-
-    // function Person1() {}
-    // Person1.prototype.name = 123;
-    //
-    // function Women1() {}
-    //
-    // Women1.prototype = Person1.prototype;
-    // Women1.prototype.constructor = Women1;
-    //
-    // var xuan1 = new Women1();
-    // console.log(xuan1.name);
-    // console.log(xuan1);
-
-    // function Person2(){}
-    // Person2.prototype.name =123;
-    //
-    // function Women2 () {}
-    // Women2.prototype = new Person2();
-    // Women2.prototype.constructor = Women2;
-    //
-    // var xuan2 = new Women2();
-    // console.log(xuan2.name);
-    // console.log(xuan2);
-
-    function Person3(){}
-    Person3.prototype.name =123;
-
-    function Women3 () {}
-
-    var f = new Person3();
-
-    Women3.prototype = f.__proto__;
-    Women3.prototype.constructor = Women3;
-
-    var xuan3 = new Women3();
-    console.log(xuan3.name);
-    console.log(xuan3);
-
+    var arrayLike = {
+        '0' : 'a',
+        '1' : 'b',
+        '2' : 'c',
+        length : 3,
+    };
+    console.log(Array.from(arrayLike));
+    console.log([].slice.call(arrayLike));
+    console.log(Array.prototype.slice.call(arrayLike));
 </script>
 </body>
 </html>
